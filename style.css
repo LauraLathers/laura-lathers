@@ -2,7 +2,7 @@
   --bg: #f2f0eb;
   --text: #0a0a0a;
   --text-secondary: #4a4a4a;
-  --accent: #e8ff00;
+  --accent: maroon;
   --font-display: "Space Grotesk", sans-serif;
   --font-body: "Inter", sans-serif;
 }
@@ -41,7 +41,7 @@ p {
 }
 
 .status-line span {
-  color:rgb(139, 0, 60);
+  color:var(--accent);
   font-weight: 700;
 }
 
@@ -50,24 +50,32 @@ section {
   max-width: 700px;
 }
 
-/*
-h1 {
-    color:rgb(0, 0, 0);
-    font-size:48px;
-    transform: rotate(-1deg); 
-    text-shadow: 3px 3px 0px hotpink; 
-
+#about::before {
+  content: "01 / ABOUT MEEE";
+  display: block;
+  font-family: var(--font-display);
+  font-size: 14px;
+  letter-spacing: 2px;
+  color:var(--accent);
+  margin-bottom: 16px;
 }
 
-h1:hover{
-    color:rgb(2, 28, 156);
-    cursor:pointer;
-}
-body{
-    color:rgb(0, 0, 0);
-    background:linear-gradient(45deg,rgb(225, 125, 92),rgb(231, 23, 100));
-    font-family: Georgia, serif;
-    text-align: center;
+#interests::before {
+  content: "02 / CURRENTLY";
+  display: block;
+  font-family: var(--font-display);
+  font-size: 14px;
+  letter-spacing: 2px;
+  color:var(--accent);
+  margin-bottom: 16px;
 }
 
-*/
+#status::before {
+  content: "03 / STATUS";
+  display: block;
+  font-family: var(--font-display);
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
