@@ -23,3 +23,21 @@ document.querySelector(".status-block").addEventListener("click", function() {
   alert("LauraSchlaura hat übernommen. Frag nicht warum.");
   document.body.style.transform = "rotate(180deg)";
 });
+
+const beobachter = new IntersectionObserver(function(einträge) {
+  einträge.forEach(function(eintrag) {
+    if (eintrag.isIntersecting) {
+      eintrag.target.classList.add("visible");
+    }
+  });
+});
+
+document.querySelectorAll("section").forEach(function(section) {
+  beobachter.observe(section);
+});
+
+const koordinatenFeld = document.querySelector("#koordinaten");
+
+document.addEventListener("mousemove", function(event) {
+  koordinatenFeld.textContent = "X: " + event.clientX + " / Y: " + event.clientY;
+});

@@ -7,6 +7,19 @@
   --font-body: "Inter", sans-serif;
 }
 
+#koordinaten {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-family: var(--font-display);
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: var(--text-secondary);
+  pointer-events: none;
+  z-index: 100;
+}
+
+
 body {
   background-color: var(--bg);
   color: var(--text);
@@ -95,3 +108,15 @@ section {
   border-color: var(--accent);
 }
 
+section {
+  margin-bottom: 80px;
+  max-width: 700px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
