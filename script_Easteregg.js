@@ -84,8 +84,68 @@ const wiesel = document.querySelector("#wiesel");
 
 console.log("Wiesel:", wiesel);
 
+
 if (wiesel) {
-  setTimeout(function() {
-    wiesel.style.left = "300px";
-  }, 1000);
+
+  function wieselLäuftLos() {
+
+    // Wiesel verschwinden lassen
+    wiesel.style.opacity = "0";
+
+
+    // Zufällige Zeit verschwinden
+    const verschwindeZeit =
+      500 + Math.random() * 1500;
+
+
+    setTimeout(function() {
+
+      // Zufällige X-Position
+      const neueXPosition =
+        Math.random() * (window.innerWidth - 80);
+
+
+      // Zufällige Y-Position
+      const neueYPosition =
+        Math.random() * (window.innerHeight - 80);
+
+
+      // Wiesel an neue Position setzen
+      wiesel.style.left =
+        neueXPosition + "px";
+
+      wiesel.style.top =
+        neueYPosition + "px";
+
+
+      // Wiesel wieder sichtbar machen
+      wiesel.style.opacity = "1";
+
+
+      // Zufällige Geschwindigkeit
+      const dauer =
+        1 + Math.random() * 4;
+
+      wiesel.style.transition =
+        "left " + dauer + "s linear, " +
+        "top " + dauer + "s linear, " +
+        "opacity 0.3s ease";
+
+
+      // Nächsten Auftritt planen
+      const wartezeit =
+        2000 + Math.random() * 4000;
+
+      setTimeout(wieselLäuftLos, wartezeit);
+
+    }, verschwindeZeit);
+  }
+
+
+  // Wiesel startet
+  setTimeout(wieselLäuftLos, 1000);
+
+}
+if (Math.random() < 0.2) {
+    // Wiesel macht Blödsinn
 }

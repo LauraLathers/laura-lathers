@@ -137,7 +137,19 @@ section.visible {
   position: fixed;
   left: 0;
   top: 50%;
-  font-size: 50px;
+
+  font-size: 25px;
+
   z-index: 300;
-  transition: left 2s linear;
+
+  cursor: pointer;
+
+  user-select: none;
+
+  opacity: 1;
+
+  transition:
+    left 2s linear,
+    top 2s linear,
+    opacity 0.3s ease;
 }
