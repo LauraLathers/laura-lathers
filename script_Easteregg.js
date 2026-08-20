@@ -41,3 +41,13 @@ const koordinatenFeld = document.querySelector("#koordinaten");
 document.addEventListener("mousemove", function(event) {
   koordinatenFeld.textContent = "X: " + event.clientX + " / Y: " + event.clientY;
 });
+
+
+const fortschrittsBalken = document.querySelector("#scroll-fortschritt");
+
+document.addEventListener("scroll", function() {
+  const gescrollt = document.documentElement.scrollTop;
+  const gesamtHöhe = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  const prozent = (gescrollt / gesamtHöhe) * 100;
+  fortschrittsBalken.style.width = prozent + "%";
+});
