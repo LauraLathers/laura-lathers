@@ -131,3 +131,13 @@ section.visible {
   z-index: 200;
   transition: width 0.1s ease;
 }
+
+
+#wiesel {
+  position: fixed;
+  left: 0;
+  top: 50%;
+  font-size: 50px;
+  z-index: 300;
+  transition: left 2s linear;
+}
