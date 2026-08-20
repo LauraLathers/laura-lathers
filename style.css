@@ -17,7 +17,6 @@
     --grey: #68645f;
     --light-grey: #d8d3ca;
 
-    /* LAURAS ROT */
     --red: #7b171b;
     --red-dark: #5d0f13;
     --red-light: #a83232;
@@ -37,11 +36,9 @@
     box-sizing: border-box;
 }
 
-
 html {
     scroll-behavior: smooth;
 }
-
 
 body {
 
@@ -93,14 +90,11 @@ body::before {
     left: 0;
 
     width: 0%;
-
     height: 3px;
 
     background: var(--red);
 
     z-index: 10000;
-
-    transition: width 0.1s linear;
 }
 
 
@@ -157,7 +151,6 @@ body::before {
         transform 0.3s ease;
 }
 
-
 #wiesel:hover {
 
     transform:
@@ -165,12 +158,15 @@ body::before {
         rotate(-10deg);
 
     filter:
-        drop-shadow(0 5px 10px rgba(123, 23, 27, 0.2));
+        drop-shadow(
+            0 5px 10px
+            rgba(123, 23, 27, 0.2)
+        );
 }
 
 
 /* =========================================================
-   GENERAL SECTION
+   SECTIONS
    ========================================================= */
 
 section {
@@ -185,22 +181,9 @@ section {
 
     margin-bottom: 150px;
 
-    /*
-       WICHTIG:
-
-       NICHT mehr opacity: 0.
-
-       Dadurch bleibt die Website sichtbar,
-       selbst wenn JavaScript nicht läuft.
-    */
-
     opacity: 1;
 
     transform: translateY(0);
-
-    transition:
-        opacity 0.8s ease,
-        transform 0.8s ease;
 }
 
 
@@ -219,14 +202,9 @@ section {
     display: flex;
 
     align-items: center;
-
-    position: relative;
 }
 
-
 .intro-content {
-
-    position: relative;
 
     width: 100%;
 
@@ -253,7 +231,6 @@ section {
     text-transform: uppercase;
 }
 
-
 .system-label::before {
 
     content: "● ";
@@ -263,7 +240,7 @@ section {
 
 
 /* =========================================================
-   MAIN TITLE
+   TITLE
    ========================================================= */
 
 h1 {
@@ -284,7 +261,6 @@ h1 {
 
     color: var(--black);
 }
-
 
 h1:hover {
 
@@ -315,7 +291,6 @@ h1:hover {
     color: var(--grey);
 }
 
-
 .intro-meta span:first-child {
 
     color: var(--red);
@@ -327,22 +302,16 @@ h1:hover {
    ========================================================= */
 
 #about::before {
-
     content: "01 / ABOUT MEEE";
 }
 
-
 #interests::before {
-
     content: "02 / CURRENTLY";
 }
 
-
 #status::before {
-
     content: "03 / STATUS";
 }
-
 
 #about::before,
 #interests::before,
@@ -365,7 +334,7 @@ h1:hover {
 
 
 /* =========================================================
-   ABOUT TEXT
+   TEXT
    ========================================================= */
 
 p {
@@ -385,33 +354,11 @@ p {
         transform 0.25s ease;
 }
 
-
 p:hover {
 
     color: var(--black);
 
     transform: translateX(5px);
-}
-
-
-/* =========================================================
-   TYPEWRITER MOMENT
-   ========================================================= */
-
-/*
-   Für einzelne Texte kannst du später
-   class="typewriter" verwenden.
-*/
-
-.typewriter {
-
-    font-family: var(--font-mono);
-
-    font-size: 14px;
-
-    line-height: 1.8;
-
-    color: var(--red);
 }
 
 
@@ -427,7 +374,6 @@ ul {
 
     list-style: none;
 }
-
 
 li {
 
@@ -446,12 +392,10 @@ li {
         padding-left 0.3s ease;
 }
 
-
 li:first-child {
 
     border-top: 1px solid var(--light-grey);
 }
-
 
 li:hover {
 
@@ -459,7 +403,6 @@ li:hover {
 
     padding-left: 15px;
 }
-
 
 li::before {
 
@@ -475,7 +418,6 @@ li::before {
 
     transition: opacity 0.25s ease;
 }
-
 
 li:hover::before {
 
@@ -511,7 +453,6 @@ li:hover::before {
         box-shadow 0.35s ease;
 }
 
-
 .status-block:hover {
 
     transform:
@@ -522,11 +463,6 @@ li:hover::before {
     box-shadow:
         10px 10px 0 var(--red);
 }
-
-
-/* =========================================================
-   STATUS HEADER
-   ========================================================= */
 
 .status-header {
 
@@ -547,26 +483,18 @@ li:hover::before {
     color: var(--red);
 }
 
-
 .status-header span:last-child {
 
     font-size: 17px;
 
-    transition:
-        transform 0.4s ease;
+    transition: transform 0.4s ease;
 }
-
 
 .status-block:hover
 .status-header span:last-child {
 
     transform: rotate(90deg);
 }
-
-
-/* =========================================================
-   STATUS LINES
-   ========================================================= */
 
 .status-line {
 
@@ -578,7 +506,6 @@ li:hover::before {
 
     color: var(--grey);
 }
-
 
 .status-line span {
 
@@ -596,20 +523,23 @@ li:hover::before {
 
 #photos {
 
+    width: 100%;
+
     max-width: 1200px;
 
-    margin-left: 0;
-
-    margin-top: 220px;
+    margin: 220px 0 180px;
 
     padding-left: 4vw;
 
     display: grid;
 
     grid-template-columns:
-        repeat(2, minmax(280px, 400px));
+        minmax(280px, 400px)
+        minmax(280px, 400px);
 
-    gap: 100px 80px;
+    gap: 110px 90px;
+
+    align-items: start;
 }
 
 
@@ -640,7 +570,6 @@ li:hover::before {
     color: var(--red);
 }
 
-
 .archive-header span:last-child {
 
     color: var(--grey);
@@ -648,7 +577,7 @@ li:hover::before {
 
 
 /* =========================================================
-   PHOTO OBJECT
+   ARCHIVE OBJECT
    ========================================================= */
 
 .photo {
@@ -659,25 +588,24 @@ li:hover::before {
 
     max-width: 400px;
 
+    min-width: 0;
+
     margin: 0;
 
     transition:
-        transform 0.5s cubic-bezier(.2,.8,.2,1);
+        transform 0.45s cubic-bezier(.2,.8,.2,1);
 }
 
+.archive-photo-001 {
 
-.photo:nth-of-type(2) {
+    transform: rotate(-1.5deg);
+}
+
+.archive-photo-002 {
 
     transform:
-        translateY(60px)
+        translateY(55px)
         rotate(1.5deg);
-}
-
-
-.photo:nth-of-type(3) {
-
-    transform:
-        rotate(-1.5deg);
 }
 
 
@@ -691,15 +619,49 @@ li:hover::before {
 
     width: 100%;
 
-    background: #dedad3;
-
     overflow: hidden;
 
+    background: #ddd8d0;
+
     border: 1px solid var(--black);
+
+    box-shadow:
+        0 0 0 8px var(--paper);
+
+    transition:
+        box-shadow 0.4s ease,
+        transform 0.4s ease;
 }
 
 
-.photo-frame img,
+/* =========================================================
+   IMAGE
+   ========================================================= */
+
+.photo-frame img {
+
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+    min-height: 300px;
+
+    object-fit: cover;
+
+    filter: grayscale(15%);
+
+    transition:
+        transform 0.6s cubic-bezier(.2,.8,.2,1),
+        filter 0.5s ease;
+}
+
+
+/* =========================================================
+   VIDEO
+   ========================================================= */
+
 .photo-frame video {
 
     display: block;
@@ -708,20 +670,49 @@ li:hover::before {
 
     height: auto;
 
-    max-height: 600px;
+    min-height: 300px;
 
-    object-fit: cover;
+    background: #111;
 
-    filter: grayscale(12%);
-
-    transition:
-        transform 0.6s cubic-bezier(.2,.8,.2,1),
-        filter 0.6s ease;
+    object-fit: contain;
 }
 
 
 /* =========================================================
-   PHOTO HOVER
+   SUBJECT LABEL
+   ========================================================= */
+
+.photo-tag {
+
+    position: absolute;
+
+    left: 14px;
+    bottom: 14px;
+
+    padding: 7px 10px;
+
+    background:
+        rgba(244, 241, 235, 0.94);
+
+    border-left:
+        3px solid var(--red);
+
+    font-family: var(--font-mono);
+
+    font-size: 9px;
+
+    letter-spacing: 0.1em;
+
+    color: var(--red);
+
+    white-space: nowrap;
+
+    z-index: 5;
+}
+
+
+/* =========================================================
+   HOVER
    ========================================================= */
 
 .photo:hover {
@@ -734,30 +725,35 @@ li:hover::before {
     z-index: 10;
 }
 
-
 .photo:hover .photo-frame {
 
     box-shadow:
-        15px 15px 0 rgba(123, 23, 27, 0.15);
+        12px 12px 0
+        rgba(123, 23, 27, 0.16);
 }
 
+.photo:hover img {
 
-.photo:hover img,
+    transform: scale(1.035);
+
+    filter: grayscale(0%);
+}
+
 .photo:hover video {
 
     filter: grayscale(0%);
-
-    transform: scale(1.025);
 }
 
 
 /* =========================================================
-   PHOTO INFO
+   TECHNICAL INFORMATION
    ========================================================= */
 
 .photo-info {
 
-    margin-top: 15px;
+    margin-top: 18px;
+
+    padding-left: 2px;
 
     font-family: var(--font-mono);
 
@@ -772,12 +768,11 @@ li:hover::before {
     opacity: 0.8;
 }
 
-
 .photo-info div:first-child {
 
     color: var(--red);
 
-    font-weight: 700;
+    font-weight: 600;
 }
 
 
@@ -785,14 +780,13 @@ li:hover::before {
    ARCHIVE NUMBER
    ========================================================= */
 
-.photo::after {
+.photo::before {
 
     content: attr(data-archive);
 
     position: absolute;
 
-    top: -28px;
-
+    top: -27px;
     right: 0;
 
     font-family: var(--font-mono);
@@ -813,27 +807,22 @@ li:hover::before {
 
     0%,
     100% {
-
         opacity: 1;
-
     }
 
     50% {
-
         opacity: 0.25;
-
     }
 }
 
 
 /* =========================================================
-   LAURA SCHLAURA MODE
+   LAURASCHLAURA
    ========================================================= */
 
 body.schlaura-mode {
 
-    background:
-        #e8d8d5;
+    background: #e8d8d5;
 
     color: var(--red);
 
@@ -843,15 +832,12 @@ body.schlaura-mode {
         transform 0.8s ease;
 }
 
-
 body.schlaura-mode h1 {
 
     color: var(--red);
 }
 
-
-body.schlaura-mode
-.status-block {
+body.schlaura-mode .status-block {
 
     border-color: var(--red);
 
@@ -872,12 +858,10 @@ body.schlaura-mode
             0 24px 70px;
     }
 
-
     #koordinaten {
 
         display: none;
     }
-
 
     section {
 
@@ -886,25 +870,21 @@ body.schlaura-mode
         margin-bottom: 110px;
     }
 
-
     #intro {
 
         min-height: 80vh;
     }
-
 
     .intro-content {
 
         padding-left: 0;
     }
 
-
     h1 {
 
         font-size:
             clamp(48px, 15vw, 80px);
     }
-
 
     .intro-meta {
 
@@ -913,18 +893,15 @@ body.schlaura-mode
         gap: 8px;
     }
 
-
     p {
 
         font-size: 16px;
     }
 
-
     li {
 
         font-size: 21px;
     }
-
 
     #photos {
 
@@ -935,14 +912,12 @@ body.schlaura-mode
         margin-top: 150px;
     }
 
-
     .archive-header {
 
-        margin-bottom: 60px;
-
         display: block;
-    }
 
+        margin-bottom: 70px;
+    }
 
     .archive-header span {
 
@@ -951,22 +926,25 @@ body.schlaura-mode
         margin-bottom: 8px;
     }
 
-
     .photo {
 
-        max-width: 100%;
+        width: 100%;
 
-        margin-bottom: 90px;
+        max-width: 500px;
+
+        margin-bottom: 100px;
     }
 
+    .archive-photo-001,
+    .archive-photo-002 {
 
-    .photo:nth-of-type(2) {
-
-        transform:
-            translateY(0)
-            rotate(1deg);
+        transform: none;
     }
 
+    .photo-tag {
+
+        font-size: 8px;
+    }
 }
 
 
@@ -984,5 +962,4 @@ body.schlaura-mode
 
         scroll-behavior: auto !important;
     }
-
 }
